@@ -47,6 +47,9 @@ def chat_endpoint(req: ChatMessage):
     response = process_chat(req)
     return {"answer": response}
 
+@app.get("/")
+def hello():
+    return {'status':'app is running'}
 
 def process_chat(req):
     response = chat(req.question)  
